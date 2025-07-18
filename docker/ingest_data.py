@@ -14,9 +14,9 @@ def main(params):
     port = params.port
     db = params.db
     table_name = params.tblname
-    url = params.url
-    file_name = 'yellow_tripdata_2021-01.parquet'
 
+    url = 'https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-01.parquet'
+    file_name = 'yellow_tripdata_2021-01.parquet'
     os.system(f'curl -OL {url}')
 
     # %%
@@ -81,7 +81,7 @@ if __name__ == '__main__':
     parser.add_argument('--db', help='database name for postgres')
     parser.add_argument(
         '--tblname', help='name of the table we want to write the file results to')
-    parser.add_argument('--url', help='url of the csv file')
+    # parser.add_argument('--url', help='url of the csv file')
 
     args = parser.parse_args()
 
